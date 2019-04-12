@@ -1,8 +1,4 @@
 var objectAssign = require('object-assign');
-var process = require('./lib/process');
-
-// packages:
-require('next-nice-comments');
 
 /**
  * Configure the plugin
@@ -11,8 +7,7 @@ require('next-nice-comments');
 function HtmlBannerWebpackPlugin(inOptions) {
   var options = objectAssign(
     {
-      banner: ['hello html-banner-webpack-plugin!'],
-      type: 'js'
+      banner: ['hello']
     },
     inOptions
   );
@@ -25,23 +20,22 @@ function HtmlBannerWebpackPlugin(inOptions) {
  */
 HtmlBannerWebpackPlugin.prototype.apply = function(compiler) {
   var self = this;
-  var updateOptions = function(compilation) {
-    Object.assign(self.options, {
-      output: self.options.output(compiler.options.output.path, self.options.ext),
-      assets: compilation.assets
-    });
-  };
 
   if (compiler.hooks) {
     // webpack >=4.0
-    compiler.hooks.emit.tap('HtmlBannerWebpackPlugin', function(compilation) {
-      updateOptions(compilation);
-      return process(HtmlBannerWebpackPlugin, compilation, self.options);
+    compiler.hooks.compilation.tap('HtmlBannerWebpackPlugin', (compilation) => {
+      compilation.hooks.htmlWebpackPluginBeforeHtmlProcessing.tapAsync(
+        'HtmlBannerWebpackPlugin',
+        function(data, callback) {
+          data.html += '<!--FEI COMING!!!--->';
+          callback(null, data);
+        }
+      );
     });
   } else {
     // webpack < 4.0:
     compiler.plugin('emit', function(compilation) {
-      console.log('NOT_SUPPORT!');
+      console.log('NOT SUPPORT!');
       // updateOptions(compilation);
       // return process(self.options);
     });
