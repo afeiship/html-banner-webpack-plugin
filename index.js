@@ -1,5 +1,8 @@
 var objectAssign = require('object-assign');
 
+// import packages:
+require('next-nice-comments');
+
 /**
  * Configure the plugin
  * @param {Options} inOptions
@@ -7,7 +10,8 @@ var objectAssign = require('object-assign');
 function HtmlBannerWebpackPlugin(inOptions) {
   var options = objectAssign(
     {
-      banner: ['hello']
+      banner: ['hello'],
+      type: 'js'
     },
     inOptions
   );
@@ -19,15 +23,14 @@ function HtmlBannerWebpackPlugin(inOptions) {
  * Implement the plugin
  */
 HtmlBannerWebpackPlugin.prototype.apply = function(compiler) {
-  var self = this;
-
+  var options = this.options;
   if (compiler.hooks) {
     // webpack >=4.0
-    compiler.hooks.compilation.tap('HtmlBannerWebpackPlugin', (compilation) => {
+    compiler.hooks.compilation.tap('HtmlBannerWebpackPlugin', function(compilation) {
       compilation.hooks.htmlWebpackPluginBeforeHtmlProcessing.tapAsync(
         'HtmlBannerWebpackPlugin',
         function(data, callback) {
-          data.html += '<!--FEI COMING!!!--->';
+          data.html = nx.niceComments(options.banner, options.type) + data.html;
           callback(null, data);
         }
       );
