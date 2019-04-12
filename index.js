@@ -10,8 +10,8 @@ require('next-nice-comments');
 function HtmlBannerWebpackPlugin(inOptions) {
   var options = objectAssign(
     {
-      banner: ['hello'],
-      type: 'js'
+      banner: ['hello comments banner'],
+      type: 'html'
     },
     inOptions
   );
@@ -21,19 +21,16 @@ function HtmlBannerWebpackPlugin(inOptions) {
 
 /**
  * Implement the plugin
+ * webpack-plugin: v3.2.0
  */
 HtmlBannerWebpackPlugin.prototype.apply = function(compiler) {
   var options = this.options;
   if (compiler.hooks) {
-    // webpack >=4.0
-    compiler.hooks.compilation.tap('HtmlBannerWebpackPlugin', function(compilation) {
-      compilation.hooks.htmlWebpackPluginBeforeHtmlProcessing.tapAsync(
-        'HtmlBannerWebpackPlugin',
-        function(data, callback) {
-          data.html = nx.niceComments(options.banner, options.type) + data.html;
-          callback(null, data);
-        }
-      );
+    compiler.plugin('compilation', function(compilation) {
+      compilation.plugin('html-webpack-plugin-before-html-processing', function(data, cb) {
+        data.html = nx.niceComments(options.banner, options.type) + data.html;
+        // cb(null, data)
+      });
     });
   } else {
     // webpack < 4.0:
