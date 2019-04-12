@@ -1,0 +1,12 @@
+{
+  "name": "html-banner-webpack-plugin",
+  "version": "0.0.1",
+  "description": "Adds a banner to the top of each generated html.",
+  "main": "index.js",
+  "repository": "git@github.com:afeiship/html-banner-webpack-plugin.git",
+  "author": "feizheng <1290657123@qq.com>",
+  "license": "MIT",
+  "dependencies": {
+    "next-nice-comments": "github:afeiship/next-nice-comments"
+  }
+}
