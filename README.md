@@ -3,7 +3,7 @@
 
 ## install
 ```bash
-npm install afeiship/html-banner-webpack-plugin
+npm install -D afeiship/html-banner-webpack-plugin
 ```
 
 ## usage
