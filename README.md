@@ -3,7 +3,7 @@
 
 ---
 <center>
-  <img width="600" src="https://ws3.sinaimg.cn/large/006tNc79gy1g21fgm8dz8j30gi0b6mz4.jpg"/>
+  <img width="400" src="https://ws3.sinaimg.cn/large/006tNc79gy1g21fgm8dz8j30gi0b6mz4.jpg"/>
 </center>
 
 ## install
