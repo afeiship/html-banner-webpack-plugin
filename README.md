@@ -17,8 +17,7 @@ plutins:[
       'NAME: my-awesome-project',
       'BUILD_VERSION: v1.0.2-alpha.3',
       'BUILD_TIME: 2019-04-12 22:22:13'
-    ],
-    // type: 'html'
+    ]
   })
 ]
 // ...
