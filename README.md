@@ -1,10 +1,11 @@
-# html-banner-webpack-plugin
-> Adds a banner to the top of each generated html.
+<p align="center">
+  <img width="400" src="https://ws3.sinaimg.cn/large/006tNc79gy1g21fgm8dz8j30gi0b6mz4.jpg"/>
+</p>
 
 ---
-<center>
-  <img width="400" src="https://ws3.sinaimg.cn/large/006tNc79gy1g21fgm8dz8j30gi0b6mz4.jpg"/>
-</center>
+
+# html-banner-webpack-plugin
+> Adds a banner to the top of each generated html.
 
 ## install
 ```bash
