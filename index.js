@@ -1,4 +1,8 @@
 var objectAssign = require('object-assign');
+var DEFAULT_OPTIONS = {
+  banner: ['hello comments banner'],
+  type: 'html'
+};
 
 // import packages:
 require('next-nice-comments');
@@ -8,15 +12,7 @@ require('next-nice-comments');
  * @param {Options} inOptions
  */
 function HtmlBannerWebpackPlugin(inOptions) {
-  var options = objectAssign(
-    {
-      banner: ['hello comments banner'],
-      type: 'html'
-    },
-    inOptions
-  );
-
-  this.options = options;
+  this.options = objectAssign(DEFAULT_OPTIONS, inOptions);
 }
 
 /**
