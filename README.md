@@ -7,9 +7,9 @@
 # html-banner-webpack-plugin
 > Adds a banner to the top of each generated html.
 
-## install
+## installation
 ```bash
-npm install -D afeiship/html-banner-webpack-plugin
+npm install -D @feizheng/html-banner-webpack-plugin
 ```
 
 ## usage
