@@ -5,7 +5,7 @@ var DEFAULT_OPTIONS = {
 };
 
 // import packages:
-require('next-nice-comments');
+require('@feizheng/next-nice-comments');
 
 /**
  * Configure the plugin
