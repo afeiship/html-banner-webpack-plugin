@@ -1,4 +1,5 @@
 var objectAssign = require('object-assign');
+var nx = require('@feizheng/next-js-core2');
 var DEFAULT_OPTIONS = {
   banner: ['hello comments banner'],
   type: 'html'
