@@ -33,7 +33,7 @@ HtmlBannerWebpackPlugin.prototype.apply = function (compiler) {
   var options = this.options;
   var process = function (data, cb) {
     data.html = nx.niceComments(options.banner, options.type) + data.html;
-    cb(null, data)
+    cb && cb(null, data)
   };
 
   if (compiler.hooks) {
