@@ -1,6 +1,6 @@
 {
   "name": "@feizheng/html-banner-webpack-plugin",
-  "version": "1.1.1",
+  "version": "1.2.0",
   "description": "Adds a banner to the top of each generated html.",
   "main": "index.js",
   "repository": "git@github.com:afeiship/html-banner-webpack-plugin.git",
@@ -9,13 +9,13 @@
   "dependencies": {
     "@feizheng/next-js-core2": "^2.0.2",
     "@feizheng/next-nice-comments": "^1.0.0",
-    "@feizheng/next-npm-installed": "^1.0.0",
-    "prettier": "^1.16.4"
+    "@feizheng/next-npm-installed": "^1.0.0"
   },
   "publishConfig": {
     "registry": "https://registry.npmjs.org/"
   },
   "devDependencies": {
-    "@feizheng/rake-git": "^1.2.0"
+    "@feizheng/rake-git": "^1.2.0",
+    "prettier": "^1.19.1"
   }
 }

@@ -37,7 +37,7 @@ HtmlBannerWebpackPlugin.prototype.apply = function (compiler) {
   };
 
   if (compiler.hooks) {
-    compiler.plugin('compilation', function (compilation) {
+    compiler.hooks.compilation.tap('HtmlBannerWebpackPlugin', function (compilation) {
       // html-webpack-plugin === 4.x
       if (typeof HtmlWebpackPlugin.getHooks === 'function') {
         HtmlWebpackPlugin.getHooks(compilation).beforeEmit.tapAsync('HtmlBannerWebpackPlugin', process)
